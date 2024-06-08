@@ -1,0 +1,141 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  margin-top: 10%;
+}
+.image-card {
+  position: relative;
+  overflow: hidden;
+  width: 293px;
+  height: 588px;
+}
+
+.image-card:hover .image {
+  transform: scale(1.1);
+  filter: blur(5px);
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 40%;
+  top: 0;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+.image-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 40px;
+  color: white;
+  text-align: left;
+  transition: transform 0.5s ease;
+}
+.image-title h1 {
+  font-family: "D-DIN Condensed", sans-serif;
+  text-transform: uppercase;
+  text-wrap: nowrap;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 38px;
+  line-height: 38px;
+}
+.image-card:hover .image-title {
+  transform: translateY(-20px);
+}
+.image-title p {
+  font-family: "Poppins", sans-serif;
+  margin-top: 10px;
+}
+
+.show-more {
+  display: flex;
+  margin-top: 5px;
+  align-items: center;
+  color: #00bbff;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  font-family: "Poppins", sans-serif;
+}
+.image-card:hover .show-more {
+  opacity: 1;
+}
+.icon {
+  height: 18px;
+  width: 20px;
+}
+.image-origin {
+  font-size: 12px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 90%;
+  }
+
+  .image-card {
+    width: calc(33.333% - 10px);
+  }
+}
+
+@media (max-width: 992px) {
+  .image-card {
+    width: calc(50% - 10px);
+  }
+  h1 {
+    background-color: #00bbff;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+
+  .image-card {
+    width: calc(50% - 5px);
+  }
+  .image-title {
+    padding: 0 12px;
+  }
+
+  .image-title h1 {
+    font-size: 22px;
+    line-height: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .image-card {
+    width: 100%;
+  }
+  .image {
+    object-fit: cover;
+  }
+
+  .image-title h1 {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .image-title {
+    display: none;
+  }
+}
